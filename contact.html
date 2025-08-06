@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu-toggle.js" defer></script>
+    <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="navbar">
+        
+        <div class="navbar-left">
+            <img src="src/prfile2.jpg" alt="Jonas Davidsen" class="profile-img">
+            <span class="name">Jonas Davidsen</span>
+        </div>
+
+        <nav class="navbar-right" id="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+    </header>
+
+    <main>
+        <h1>Contact</h1>
+        <section id="about-me">
+            <div class="profile-text">
+                <p>I appreciate your interest in my work and welcome any questions, collaborations, or feedback you may have. Please feel free to reach out to me through the contact form below or <strong><a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" target="_blank">LinkedIn</a></strong>. I'm eager to connect with fellow enthusiasts, professionals, and anyone interested in the intersection of AI and digital tool development.</p>
+        </section>
+
+        <section id="contact-form">
+            <h2>Contact Me</h2>
+            <form name="contact" netlify>
+                <p>
+                    <label for="name">Your Name:</label><br>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email">Your Email:</label><br>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </p>
+                <p style="display:none;">
+                    <label>Don't forget to fill out this field: <input name="extra-field"></label>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jonas Davidsen. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" target="_blank">
+              <i class="fa-brands fa-square-linkedin"></i>
+        </a>
+    </footer>
+
+</body>
+</html>
