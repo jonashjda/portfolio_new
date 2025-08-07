@@ -6,6 +6,8 @@
     <title>Jonas Davidsen</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/menu-toggle.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="scripts/load-blog-posts.js" defer></script>
     <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -25,6 +27,13 @@
 
         <button class="menu-toggle" id="menu-toggle">&#9776;</button>
     </header>
+
+    <main class="blog-container">
+        <h1>Blog Posts</h1>
+        <div id="blog-posts">
+            <!-- Blog posts will be loaded here dynamically -->
+        </div>
+    </main>
 
     <footer>   
         <p>&copy; 2025 Jonas Davidsen. All rights reserved.</p>
