@@ -6,15 +6,18 @@
     <title>Jonas Davidsen</title>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/menu-toggle.js" defer></script>
+    <script src="scripts/reveal.js" defer></script>
     <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="navbar">
 
-        <div class="navbar-left">
-            <img src="src/prfile2.jpg" alt="Jonas Davidsen" class="profile-img">
-            <span class="name">Jonas Davidsen</span>
-        </div>
+        <a href="index.html" id="navbar-left-link">
+            <div class="navbar-left">
+                <img src="src/prfile2.jpg" alt="Jonas Davidsen" class="profile-img">
+                <span class="name">Jonas Davidsen</span>
+            </div>
+        </a>
 
         <nav class="navbar-right" id="navbar-links">
             <a href="index.html">Home</a>
@@ -26,13 +29,13 @@
         <button class="menu-toggle" id="menu-toggle">&#9776;</button>
     </header>
 
-    <main>
-        <section>
+    <main class="blog-container">
+        <section class="reveal">
             <h1>About Me</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut aliquet elit, vel sollicitudin mi. Suspendisse at mattis nisi, condimentum vulputate lectus. Nulla non augue hendrerit, commodo leo sed, dignissim magna. Nullam sit amet semper urna, vel ullamcorper risus. Duis lobortis augue et tortor eleifend scelerisque. Suspendisse non nisi a nulla eleifend euismod ut sed nunc. Donec at purus vitae erat pharetra scelerisque. Phasellus pretium auctor nibh et hendrerit. Pellentesque vitae aliquet sem. Pellentesque magna risus, ornare egestas sodales non, euismod sit amet lacus. Curabitur nec eros nec ante consequat mollis eu in sem. Proin posuere egestas libero, non hendrerit nulla suscipit a. Vivamus leo leo, porta vitae vulputate in, rutrum quis purus.</p>
         </section>
 
-        <section>
+        <section class="reveal">
             <h1>Educational Background</h1>
             <p>Maecenas at dictum felis. Etiam blandit vel neque id hendrerit. Nulla rutrum ullamcorper dui, vitae sagittis sem. Ut vitae lectus id ex placerat consequat. Aliquam nec posuere magna, eget elementum sem. Nulla facilisi. Pellentesque efficitur dui id nibh euismod, nec facilisis neque mollis. Suspendisse rutrum, nisl vitae elementum congue, purus ligula egestas ipsum, a aliquam dolor mauris ac neque. Curabitur vitae laoreet mi. Etiam lacinia dignissim massa id iaculis. Donec massa ex, tincidunt ac hendrerit laoreet, egestas nec libero.</p>
         </section>

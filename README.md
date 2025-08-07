@@ -21,8 +21,10 @@ portfolio_new/
 ├── projects/         # Project markdown files
 ├── scripts/         # JavaScript files
 │   ├── build-blog.js       # Build script for blog
+│   ├── build-projects.js   # Build script for projects
 │   ├── load-blog-post.js   # Script for loading individual posts
 │   ├── load-blog-posts.js  # Script for loading blog previews
+│   ├── load-project.js     # Script for loading individual projects
 │   ├── load-projects.js    # Script for loading projects
 │   ├── markdown-parser.js  # Custom Markdown parser
 │   └── menu-toggle.js      # Mobile menu functionality
@@ -56,6 +58,33 @@ The blog uses a build process to generate a JSON index of posts:
 1. Run `node scripts/build-blog.js` to generate the blog index
 2. The script processes all `.md` files in `blog/posts`
 3. Generates `dist/blog-posts.json` with post metadata and content
+
+## Projects System
+
+Projects use Markdown files with front matter in the `projects` folder. Each project supports:
+
+```
+---
+title: "Project Title"
+description: Short description
+technologies:
+  - JavaScript
+  - HTML
+image: path/to/image.png
+github: https://...
+live: https://...
+video: path/to/video.mp4
+---
+Markdown body describing the project...
+```
+
+### Building Projects
+
+1. Run `node scripts/build-projects.js`
+2. The script processes all `.md` files in `projects`
+3. Generates `dist/projects.json` with project metadata and content
+
+The combined `npm run build` now builds both blog and projects.
 
 ### Adding New Posts
 

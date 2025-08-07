@@ -1,14 +1,7 @@
-console.log('Blog post script loaded');
-
 async function loadBlogPost() {
-    console.log('=== Debug Info ===');
-    console.log('Script loaded at:', new Date().toISOString());
-    console.log('Current URL:', window.location.href);
-    console.log('Hash:', window.location.hash);
-    
     const blogPostContainer = document.getElementById('blog-post');
     if (!blogPostContainer) {
-        console.error('Blog post container not found!');
+        console.error('Blog post container not found');
         return;
     }
 
@@ -16,8 +9,6 @@ async function loadBlogPost() {
     const hash = window.location.hash.substring(1); // Remove the #
     const postIdMatch = hash.match(/^post=(.+)$/);
     const postId = postIdMatch ? decodeURIComponent(postIdMatch[1]) : null;
-    
-    console.log('Post ID from hash:', postId);
     
     if (!postId) {
         console.error('No post ID found in URL hash');
@@ -31,8 +22,6 @@ async function loadBlogPost() {
         const posts = await response.json();
         
         // Find the specific post
-        console.log('Looking for post with filename:', postId);
-        console.log('Available posts:', posts.map(p => p.filename));
         const post = posts.find(p => p.filename === postId);
         
         if (!post) {
@@ -40,8 +29,6 @@ async function loadBlogPost() {
             blogPostContainer.innerHTML = '<p>Post not found.</p>';
             return;
         }
-        
-        console.log('Found post:', post);
         
         // Set the page title
         document.title = `${post.title} - Jonas Davidsen`;

@@ -16,10 +16,6 @@ async function buildBlogIndex() {
                     
                     const { frontMatter, content: cleanContent } = parseMarkdownFile(content);
                     
-                    // Log for debugging
-                    console.log('Parsed front matter:', frontMatter);
-                    console.log('Clean content:', cleanContent);
-                    
                     return {
                         filename: filename.replace(/\s+/g, '-'), // Replace spaces with dashes
                         title: frontMatter.title,

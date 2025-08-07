@@ -25,7 +25,6 @@ async function loadBlogPosts() {
             const titleLink = document.createElement('a');
             // Use hash-based navigation
             const postUrl = `/blog/post.html#post=${encodeURIComponent(post.filename)}`;
-            console.log('Creating URL:', postUrl);
             
             titleLink.href = postUrl;
             titleLink.textContent = post.title || 'Untitled Post';

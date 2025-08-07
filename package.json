@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "Personal portfolio with blog",
   "scripts": {
-    "build": "node scripts/build-blog.js",
+    "build": "node scripts/build-blog.js && node scripts/build-projects.js",
     "dev": "npm run build && npx serve ."
   },
-  "dependencies": {
-    "marked": "^4.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "serve": "^14.0.0"
   }
