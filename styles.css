@@ -29,6 +29,14 @@ body {
     align-items: center;
 }
 
+#navbar-left-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+
 .profile-img {
     width: 60px;
     height: 60px;
@@ -64,27 +72,45 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    color: white;
+}
+
+.navbar-right.show {
+    background-color: #333; /* Or any color you prefer */
+    position: absolute;
+    top: 100%; /* Position right below the header */
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .navbar-right {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 24px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 12px 20px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Align with bottom of navbar */
+        left: 0; /* Start from left edge */
+        right: 0; /* Stretch to right edge */
+        background-color: #444444;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 1rem;
+        width: 100%;
     }
 
     .navbar-right.show {
-    display: flex;
+        display: flex;
+    }
+
+    .navbar-right a {
+        padding: 0.5rem 0;
+        text-align: center;
     }
 
     .menu-toggle {
-    display: block;
+        display: block;
     }
 }
 
