@@ -197,6 +197,7 @@ body {
     margin-bottom: 2rem;
     padding: 1.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeSlideUp 0.5s ease-out;
 }
 
 .blog-post-preview:hover {
@@ -245,7 +246,6 @@ body {
 
 .blog-post-preview .read-more:hover {
     transform: translateX(4px);
-}
 }
 
 .back-button {
