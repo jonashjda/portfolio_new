@@ -23,14 +23,18 @@ async function loadBlogPosts() {
             // Create title with link
             const titleH2 = document.createElement('h2');
             const titleLink = document.createElement('a');
-            // Use hash-based navigation
-            const postUrl = `/blog/post.html#post=${encodeURIComponent(post.filename)}`;
-            console.log('Creating URL:', postUrl);
+            const postUrl = window.location.origin + `/blog/post.html?id=${encodeURIComponent(post.filename)}`;
             
             titleLink.href = postUrl;
             titleLink.textContent = post.title || 'Untitled Post';
             
-            // Let the browser handle navigation
+            // Handle click with navigation
+            titleLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Link clicked, navigating to:', this.href);
+                window.location = this.href;
+            });
+            
             titleH2.appendChild(titleLink);
             postHeader.appendChild(titleH2);
             
@@ -77,6 +81,13 @@ async function loadBlogPosts() {
             readMoreLink.href = postUrl;
             readMoreLink.className = 'read-more';
             readMoreLink.textContent = 'Read more →';
+            
+            // Handle click with navigation
+            readMoreLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Read more clicked, navigating to:', this.href);
+                window.location = this.href;
+            });
             
             previewContent.appendChild(readMoreLink);
             

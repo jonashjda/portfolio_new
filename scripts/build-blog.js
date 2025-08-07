@@ -1,5 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
+const { parseMarkdownFile } = require('./markdown-parser');
 
 async function buildBlogIndex() {
     try {
@@ -13,32 +14,18 @@ async function buildBlogIndex() {
                     const filePath = path.join(postsDir, filename);
                     const content = await fs.readFile(filePath, 'utf-8');
                     
-                    // Parse front matter
-                    const frontMatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
-                    const match = content.match(frontMatterRegex);
+                    const { frontMatter, content: cleanContent } = parseMarkdownFile(content);
                     
-                    let frontMatter = {};
-                    if (match) {
-                        const frontMatterStr = match[1];
-                        frontMatterStr.split('\n').forEach(line => {
-                            const [key, ...values] = line.split(':');
-                            if (key && values.length) {
-                                let value = values.join(':').trim();
-                                if (value.startsWith('[') && value.endsWith(']')) {
-                                    value = value.slice(1, -1).split(',').map(item => item.trim());
-                                } else if (value.startsWith('"') && value.endsWith('"')) {
-                                    value = value.slice(1, -1);
-                                }
-                                frontMatter[key.trim()] = value;
-                            }
-                        });
-                    }
+                    // Log for debugging
+                    console.log('Parsed front matter:', frontMatter);
+                    console.log('Clean content:', cleanContent);
                     
                     return {
-                        filename,
-                        ...frontMatter,
+                        filename: filename.replace(/\s+/g, '-'), // Replace spaces with dashes
+                        title: frontMatter.title,
                         date: frontMatter.date || filename.substring(0, 10),
-                        content: match ? match[2] : content
+                        tags: frontMatter.tags || [],
+                        content: cleanContent
                     };
                 })
         );

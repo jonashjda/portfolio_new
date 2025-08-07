@@ -23,16 +23,6 @@ body {
     animation: fadeSlideIn 0.5s ease-out;
 }
 
-@keyframes fadeSlideIn {
-    from {
-    opacity: 0;
-    transform: translateY(-12px);
-    }
-    to {
-    opacity: 1;
-    transform: translateY(0);
-    }
-}
 
 .navbar-left {
     display: flex;
@@ -111,6 +101,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
     padding: 1.5rem;
+    animation: fadeSlideUp 0.5s ease-out;
 }
 
 .blog-post header {
@@ -198,13 +189,103 @@ body {
     color: #666;
 }
 
+/* Blog post previews */
+.blog-post-preview {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-post-preview:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post-preview header {
+    margin-bottom: 1rem;
+}
+
+.blog-post-preview h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.blog-post-preview h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.blog-post-preview h2 a:hover {
+    color: #007bff;
+}
+
+.blog-post-preview time {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.blog-post-preview .post-preview {
+    color: #444;
+    line-height: 1.6;
+}
+
+.blog-post-preview .read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.blog-post-preview .read-more:hover {
+    transform: translateX(4px);
+}
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-button:hover {
+    color: #007bff;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.read-more:hover {
+    color: #0056b3;
+}
+
+.blog-post h1 {
+    color: #333;
+    margin: 0 0 0.75rem 0;
+    font-size: 2.2em;
+}
+
 /* Responsive design for blog */
 @media (max-width: 600px) {
     .blog-container {
         padding: 0 0.5rem;
     }
     
-    .blog-post {
+    .blog-post, .blog-post-preview {
         padding: 1rem;
     }
 }
@@ -276,4 +357,26 @@ footer {
 
 #contact-form button:hover {
     background-color: #555;
+}
+
+@keyframes fadeSlideIn {
+    from {
+    opacity: 0;
+    transform: translateY(-12px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+    opacity: 0;
+    transform: translateY(+12px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
 }
