@@ -375,13 +375,14 @@ a:visited {
     animation: fadeSlideIn 0.5s ease-out;
 }
 
-.project-video {
-    width: 50%;
-}
 
 .project-card img,
 .project-image {
     width: 50%;
+}
+
+.project-video {
+    width: 100%;
 }
 
 /* Footer */

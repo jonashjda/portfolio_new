@@ -3,3 +3,4 @@ node_modules/
 dist/
 .netlify/
 blog/drafts/
+projects/drafts/

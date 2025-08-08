@@ -5,7 +5,6 @@ technologies:
   - JavaScript
   - HTML
   - CSS
-image: ../src/bias_project_picture.png
 github: https://github.com/yourname/weather-app
 live: https://yourname.github.io/weather-app
 video: ../src/bias_extension_videop.mp4
