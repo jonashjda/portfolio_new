@@ -2,6 +2,12 @@
   command = "npm install && npm run build"
   publish = "."
 
+## Ensure per-post share landing pages are served (and with trailing slash)
+[[redirects]]
+  from = "/blog/s/:slug"
+  to = "/blog/s/:slug/"
+  status = 301
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
