@@ -77,7 +77,7 @@ async function loadProject() {
     if (actionLinks.length) {
       const links = document.createElement('p');
       links.className = 'project-links';
-      links.innerHTML = actionLinks.join(' | ');
+      links.innerHTML = `Find here: ${actionLinks.join(' | ')}`;
       bottom.appendChild(links);
     }
 
