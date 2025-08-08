@@ -73,6 +73,21 @@ async function loadBlogPost() {
         blogPostContainer.innerHTML = '';
         blogPostContainer.appendChild(postHeader);
         blogPostContainer.appendChild(postContent);
+
+        // Add simple text share links (Facebook, LinkedIn) using the per-post share landing page
+        const slug = post.filename.replace(/\.md$/, '');
+        const shareLandingUrl = `${window.location.origin}/blog/s/${slug}/`;
+        const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareLandingUrl)}`;
+        const liUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareLandingUrl)}`;
+
+        const shareLinks = document.createElement('div');
+        shareLinks.className = 'share-links';
+        shareLinks.innerHTML = `
+            <span>Share:</span>
+            <a href="${fbUrl}" target="_blank" rel="noopener">Facebook</a>
+            <a href="${liUrl}" target="_blank" rel="noopener">LinkedIn</a>
+        `;
+        blogPostContainer.appendChild(shareLinks);
         
     } catch (error) {
         console.error('Error loading blog post:', error);
