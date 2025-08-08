@@ -80,6 +80,10 @@ async function buildBlogIndex() {
             const description = escapeHtml(markdownToPlainText(post.content).slice(0, 180));
             const published = String(post.date || '');
 
+            // Default Open Graph/Twitter image: site favicon (32x32)
+            const defaultOgImagePath = '/src/favicon32.png';
+            const absoluteOgImageUrl = siteUrl ? new URL(defaultOgImagePath, siteUrl).href : defaultOgImagePath;
+
             const redirectUrl = `/blog/post.html#post=${encodeURIComponent(post.filename)}`;
 
             const html = `<!doctype html>
@@ -87,13 +91,19 @@ async function buildBlogIndex() {
 <head>
   <meta charset="utf-8">
   <title>${title} - Jonas Davidsen</title>
+  <link rel="icon" href="/src/favicon32.png" type="image/png" sizes="32x32">
   <meta name="description" content="${description}">
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${escapeHtml(absoluteUrl)}">
+  <meta property="og:image" content="${escapeHtml(absoluteOgImageUrl)}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="32">
+  <meta property="og:image:height" content="32">
   <meta property="article:published_time" content="${escapeHtml(published)}">
   <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="${escapeHtml(absoluteOgImageUrl)}">
   <meta http-equiv="refresh" content="0;url=${redirectUrl}">
   <link rel="canonical" href="${redirectUrl}">
   <meta name="robots" content="all">
