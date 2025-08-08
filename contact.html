@@ -38,9 +38,9 @@
                 <p>I appreciate your interest in my work and welcome any questions, collaborations, or feedback you may have. Please feel free to reach out to me through the contact form below or <strong><a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" target="_blank">LinkedIn</a></strong>. I'm eager to connect with fellow enthusiasts, professionals, and anyone interested in the intersection of AI and digital tool development.</p>
         </section>
 
-        <section id="contact-form" class="reveal">
+        <section id="contact-form" class="reveal" >
             <h2>Contact Me</h2>
-            <form name="contact" netlify>
+            <form name="contact" netlify data-netlify-recaptcha="true">
                 <p>
                     <label for="name">Your Name:</label><br>
                     <input type="text" id="name" name="name" required>
@@ -56,6 +56,7 @@
                 <p style="display:none;">
                     <label>Don't forget to fill out this field: <input name="extra-field"></label>
                 </p>
+                <div data-netlify-recaptcha="true"></div>
                 <p>
                     <button type="submit">Send</button>
                 </p>
