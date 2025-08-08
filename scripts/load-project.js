@@ -72,7 +72,7 @@ async function loadProject() {
     }
 
     const actionLinks = [];
-    if (project.github) actionLinks.push(`<a href="${project.github}" target="_blank">GitHub</a>`);
+    if (project.github) actionLinks.push(`<a href="${project.github}" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>`);
     if (project.live) actionLinks.push(`<a href="${project.live}" target="_blank">Live</a>`);
     if (actionLinks.length) {
       const links = document.createElement('p');
