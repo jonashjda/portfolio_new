@@ -9,8 +9,7 @@ technologies:
 github: https://github.com/jonashjda/bias-chrome-extension
 ---
 
-![Image showing the extension in action analyzing a news article](project_assets/bias-analysis-extension/bias-extension-image.png "Bias Analysis Chrome Extension")
-
+![Image showing the UI of the extension](project_assets/bias-analysis-extension/bias-extension-image.png "Bias Analysis Chrome Extension")
 
 
 This Chrome extension allows users to instantly analyze the political bias of web content such as news articles or opinion pieces. It extracts the visible text from the current page and sends it to an AI model, which returns a concise bias rating (e.g., "Left-leaning", "Neutral", "Right-leaning") along with a short explanation.
@@ -24,8 +23,7 @@ This Chrome extension allows users to instantly analyze the political bias of we
 
 **See it in action:**
 
-<video src="project_assets/bias-analysis-extension/bias-extension-video.mp4" width=100% controls></video>
-
+![GIF showing the extension in action analyzing a FOX-News article](project_assets/bias-analysis-extension/bias-extension-gif.gif "Bias Analysis Chrome Extension analyzing a FOX-News article")
 
 **Want to try it?**
 
