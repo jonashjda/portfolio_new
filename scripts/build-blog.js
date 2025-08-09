@@ -38,7 +38,6 @@ async function buildBlogIndex() {
             path.join(distDir, 'blog-posts.json'),
             JSON.stringify(posts, null, 2)
         );
-        
         // Generate per-post share landing pages with Open Graph tags
         // These pages provide correct previews for social platforms and redirect users to the hash-based post page
         const siteUrl = process.env.URL || process.env.DEPLOY_URL || process.env.SITE_URL || '';
@@ -80,8 +79,8 @@ async function buildBlogIndex() {
             const description = escapeHtml(markdownToPlainText(post.content).slice(0, 180));
             const published = String(post.date || '');
 
-            // Default Open Graph/Twitter image: site favicon (32x32)
-            const defaultOgImagePath = '/src/favicon32.png';
+            // Default Open Graph/Twitter image: site header/profile image
+            const defaultOgImagePath = '/src/prfile2.jpg';
             const absoluteOgImageUrl = siteUrl ? new URL(defaultOgImagePath, siteUrl).href : defaultOgImagePath;
 
             const redirectUrl = `/blog/post.html#post=${encodeURIComponent(post.filename)}`;
@@ -98,16 +97,13 @@ async function buildBlogIndex() {
   <meta property="og:type" content="article">
   <meta property="og:url" content="${escapeHtml(absoluteUrl)}">
   <meta property="og:image" content="${escapeHtml(absoluteOgImageUrl)}">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="32">
-  <meta property="og:image:height" content="32">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="article:published_time" content="${escapeHtml(published)}">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${escapeHtml(absoluteOgImageUrl)}">
   <meta http-equiv="refresh" content="0;url=${redirectUrl}">
   <link rel="canonical" href="${redirectUrl}">
   <meta name="robots" content="all">
-  <!-- Optional: add <meta property=\"og:image\" ...> if you have a default or per-post image -->
   <script>
     // JS redirect as a fallback if meta refresh is blocked
     window.location.replace(${JSON.stringify(redirectUrl)});
