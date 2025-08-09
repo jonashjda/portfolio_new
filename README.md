@@ -1,8 +1,10 @@
 # Portfolio Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be55e415-628a-4a2a-8028-707aca336a09/deploy-status)](https://app.netlify.com/projects/vocal-shortbread-6c510a/deploys)
+
 Personal portfolio with a blog and projects, built with HTML, CSS, and JavaScript. Content is authored in Markdown and compiled into JSON at build time for fast, static hosting.
 
-Currently in demo version at: https://vocal-shortbread-6c510a.netlify.app/
+Currently in demo version at: https://www.jonasdavidsen.com
 
 ## Features
 
