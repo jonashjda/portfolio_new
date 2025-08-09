@@ -20,8 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Home route handling: '/', '/index.html', or subpath variants
-  if (currentPath.endsWith('/') || /\/index\.html$/.test(currentPath)) {
-    return markActive(a => /index\.html$/.test(a.getAttribute('href') || '') || a.pathname.endsWith('/index.html'));
+  if (currentPath === '/' || currentPath.endsWith('/') || /\/index\.html$/.test(currentPath)) {
+    const found = links.find(a => /index\.html$/.test(a.getAttribute('href') || '') || a.pathname.endsWith('/index.html'));
+    if (found) {
+      found.classList.add('active');
+      return;
+    }
+    // Fallback: match by link text 'Home'
+    return markActive(a => (a.textContent || '').trim().toLowerCase() === 'home');
   }
 
   // Exact match fallback

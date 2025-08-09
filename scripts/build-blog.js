@@ -102,7 +102,7 @@ async function buildBlogIndex() {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${escapeHtml(absoluteOgImageUrl)}">
   <meta http-equiv="refresh" content="0;url=${redirectUrl}">
-  <link rel="canonical" href="${redirectUrl}">
+  <link rel="canonical" href="${escapeHtml(absoluteUrl)}">
   <meta name="robots" content="all">
   <script>
     // JS redirect as a fallback if meta refresh is blocked
