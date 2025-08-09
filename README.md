@@ -7,7 +7,7 @@ Currently in demo version at: https://vocal-shortbread-6c510a.netlify.app/
 ## Features
 
 - **Responsive navigation**: Mobile menu with toggle (`scripts/menu-toggle.js`).
-- **Reveal-on-scroll animations**: Accessible and motion-aware (`scripts/reveal.js`).
+- **Page-load animations**: Subtle, motion-aware CSS animations (no JS required). Optional `scripts/reveal.js` kept for future scroll-in use.
 - **Blog system**:
   - Markdown posts with YAML-like front matter (`blog/posts/*.md`).
   - Build step generates `dist/blog-posts.json` and SEO-friendly per-post share landing pages under `blog/s/:slug/` with Open Graph tags.
@@ -41,7 +41,7 @@ portfolio_new/
 │   ├── load-projects.js           # Renders projects list/previews
 │   ├── markdown-parser.js         # Lightweight front matter parser
 │   ├── menu-toggle.js             # Mobile nav toggle
-│   └── reveal.js                  # Scroll-in animations
+│   └── reveal.js                  # (Optional) Scroll-in animations, not enabled by default
 ├── src/                           # Static assets (images, videos)
 ├── dist/                          # Build output (gitignored)
 │   ├── blog-posts.json

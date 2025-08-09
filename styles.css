@@ -14,13 +14,29 @@ a:visited {
     color: inherit;
 }
 
-/* Reveal (scroll-in) */
-.reveal { opacity: 0; transform: translateY(12px); }
+/* Reveal animations (on-load instead of on-scroll) */
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeSlideUp 0.5s ease-out;
+}
 
-.reveal-visible {
-    opacity: 1; transform: translateY(0);
-    transition: opacity 500ms ease-out var(--reveal-delay, 0ms),
-                transform 500ms ease-out var(--reveal-delay, 0ms);
+
+/* Apply a gentle load-in to main content blocks */
+.blog-container > * {
+    animation: fadeSlideUp 0.5s ease-out;
+}
+
+footer { 
+    animation: fadeSlideUp 0.5s ease-out; 
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 /* Header / Navbar */
@@ -105,6 +121,14 @@ a:visited {
 .navbar-right a:hover,
 .navbar-right a:focus-visible {
     transform: translateY(-1px);
+}
+
+/* Active nav link */
+.navbar-right a.active {
+    color: #007bff;
+}
+.navbar-right a.active::after {
+    transform: scaleX(1);
 }
 
 .menu-toggle {
@@ -377,6 +401,46 @@ a:visited {
 /* Projects */
 #projects {
     animation: fadeSlideIn 0.5s ease-out;
+}
+
+/* Education cards */
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.edu-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.edu-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.edu-card header {
+    margin-bottom: 0.5rem;
+}
+
+.edu-card h2 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.25rem;
+}
+
+.edu-card time,
+.edu-card .edu-meta {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.edu-card p {
+    color: #444;
+    margin: 0.5rem 0 0;
 }
 
 .project-links a {
