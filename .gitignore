@@ -5,3 +5,5 @@ dist/
 blog/drafts/
 projects/drafts/
 blog/s/
+sitemap.xml
+robots.txt

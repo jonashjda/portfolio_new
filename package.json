@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal portfolio with blog",
   "scripts": {
-    "build": "node scripts/build-blog.js && node scripts/build-projects.js",
+    "build": "node scripts/build-blog.js && node scripts/build-projects.js && node scripts/build-sitemap.js",
     "dev": "npm run build && npx serve ."
   },
   "dependencies": {},
