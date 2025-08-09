@@ -101,18 +101,17 @@ async function buildBlogIndex() {
   <meta property="article:published_time" content="${escapeHtml(published)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${escapeHtml(absoluteOgImageUrl)}">
-  <meta http-equiv="refresh" content="0;url=${redirectUrl}">
   <link rel="canonical" href="${escapeHtml(absoluteUrl)}">
   <meta name="robots" content="all">
   <script>
-    // JS redirect as a fallback if meta refresh is blocked
+    // Redirect humans to the hash-based post URL; bots will keep this page for OG tags
     window.location.replace(${JSON.stringify(redirectUrl)});
   </script>
   <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;padding:2rem}</style>
   </head>
 <body>
   <p>Redirecting to the post… If you are not redirected, <a href="${redirectUrl}">click here</a>.</p>
-  <noscript><meta http-equiv="refresh" content="0;url=${redirectUrl}"></noscript>
+  <noscript><p><a href="${redirectUrl}">View the post</a></p></noscript>
 </body>
 </html>`;
 

@@ -5,10 +5,21 @@ async function loadBlogPost() {
         return;
     }
 
-    // Extract post ID from hash
+    // Extract post ID from hash or query (?post=...)
     const hash = window.location.hash.substring(1); // Remove the #
     const postIdMatch = hash.match(/^post=(.+)$/);
-    const postId = postIdMatch ? decodeURIComponent(postIdMatch[1]) : null;
+    let postId = postIdMatch ? decodeURIComponent(postIdMatch[1]) : null;
+
+    if (!postId) {
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get('post');
+        if (q) {
+            postId = decodeURIComponent(q);
+            // Normalize URL to hash form without reloading
+            const newUrl = `${window.location.pathname}#post=${encodeURIComponent(postId)}`;
+            window.history.replaceState({}, '', newUrl);
+        }
+    }
     
     if (!postId) {
         console.error('No post ID found in URL hash');
