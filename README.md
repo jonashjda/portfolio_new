@@ -4,7 +4,7 @@
 
 Personal portfolio with a blog and projects, built with HTML, CSS, and JavaScript. Content is authored in Markdown and compiled into JSON at build time for fast, static hosting.
 
-Currently in demo version at: https://www.jonasdavidsen.com
+Currently at: https://www.jonasdavidsen.com
 
 ## Features
 
