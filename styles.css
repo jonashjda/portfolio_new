@@ -64,6 +64,11 @@ footer {
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s;
+    transition: transform 180ms ease;
+}
+
+#navbar-left-link:hover {
+    transform: translateY(-1px);
 }
 
 .profile-img {
@@ -567,10 +572,22 @@ footer a:hover i {
     align-self: center;
     max-width: 150px;
     width: auto;
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: transform 220ms ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #contact-form button:hover {
-    background-color: #555;
+    cursor: pointer;
+    transform: translateY(-2px) scale(1.12);
+
 }
 
 /* Animations */
