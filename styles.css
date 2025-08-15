@@ -590,6 +590,12 @@ footer a:hover i {
 
 }
 
+.captcha {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Animations */
 @keyframes fadeSlideIn {
     from {
