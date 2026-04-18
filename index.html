@@ -1,107 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Jonas Davidsen</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="src/favicon32.png" type="image/png">
-    <link rel="canonical" href="https://jonasdavidsen.com/">
-    <meta name="description" content="Welcome to my site! Or if you're seeing this in a search engine, how good is my SEO? Anyways, here you can find some information about me, my projects, and my thoughts about AI and related topics.">
-    <meta property="og:title" content="Home - Jonas Davidsen">
-    <meta property="og:description" content="Welcome to my site! Or if you're seeing this in a search engine, how good is my SEO? Anyways, here you can find some information about me, my projects, and my thoughts about AI and related topics.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jonasdavidsen.com/">
-    <meta property="og:image" content="https://jonasdavidsen.com/src/prfile2.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://jonasdavidsen.com/src/prfile2.jpg">
-    <script src="scripts/menu-toggle.js" defer></script>
-    <script src="scripts/active-nav.js" defer></script>
-    <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Back Soon</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0b0b0b;
+      --surface: #111111;
+      --gold: #c9a84c;
+      --gold-dim: #c9a84c44;
+      --text-primary: #f0ece3;
+      --text-secondary: #7a776e;
+      --border: #1f1f1f;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Noise grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* Ambient radial glow */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, #c9a84c0a 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.12); }
+    }
+
+    /* ─── Layout ─── */
+    .stage {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      max-width: 560px;
+      width: 100%;
+      animation: fadein 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Ornament ─── */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .ornament-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+
+    .ornament-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold), 0 0 24px var(--gold-dim);
+      animation: pulse 2.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1;   transform: scale(1);    box-shadow: 0 0 8px var(--gold), 0 0 20px var(--gold-dim); }
+      50%       { opacity: 0.5; transform: scale(0.7);  box-shadow: 0 0 4px var(--gold), 0 0 8px var(--gold-dim); }
+    }
+
+    /* ─── Eyebrow ─── */
+    .eyebrow {
+      font-size: 0.6875rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      opacity: 0.9;
+    }
+
+    /* ─── Headline ─── */
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 1.5rem;
+      opacity: 0.5;
+    }
+
+    /* ─── Body text ─── */
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 400;
+      max-width: 380px;
+    }
+
+    /* ─── Scanning bar ─── */
+    .scan-track {
+      width: 100%;
+      max-width: 320px;
+      height: 1px;
+      background: var(--border);
+      margin-top: 3rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1px;
+    }
+
+    .scan-bar {
+      position: absolute;
+      top: 0;
+      left: -30%;
+      width: 30%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: scan 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    }
+
+    @keyframes scan {
+      0%   { left: -30%; }
+      100% { left: 130%; }
+    }
+
+    /* ─── Footer note ─── */
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      opacity: 0.45;
+    }
+  </style>
 </head>
 <body>
-    <header class="navbar">
+  <div class="stage">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-dot"></div>
+      <div class="ornament-line"></div>
+    </div>
 
-        <a href="index.html" id="navbar-left-link">
-            <div class="navbar-left">
-                <img src="src/prfile2.jpg" alt="Jonas Davidsen" class="profile-img">
-                <span class="name">Jonas Davidsen</span>
-            </div>
-        </a>
+    <p class="eyebrow">Under Redesign</p>
 
-        <nav class="navbar-right" id="navbar-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-        </nav>
+    <h1>Something <em>new</em><br>is on its way.</h1>
 
-        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-    </header>
+    <div class="divider"></div>
 
-    <main class="blog-container">
-        <section class="reveal">
-            <h1>Exploring Ideas Through AI-Assisted Development</h1>
-            <p>
-                In my spare time, I like to “vibe-code”, which means using AI tools, curiosity, and a lot of experimentation to turn ideas into working projects.
-                At least, that's how ChatGPT would describe it. In simpler terms, it means using AI to code with.
-            </p>
-            <p>
-                Without a traditional computer science background, I’ve learned by building: starting with a concept, getting it running as quickly as possible, and refining it through trial, error, and iteration.
-                AI fills in the technical gaps, allowing me to quickly iterate and improve my ideas and their technical implementation.
-            </p>
-            <p>
-                My educational background in the intersection between IT, business, and communication shapes how I think about user experience and problem-solving, but my projects are ultimately about exploration.
-                Some are polished, others are rough around the edges, but each one taught me something new and gave me something real to share - and that’s what keeps me coming back to build the next one!
-            </p>
-            <p>
-                I also like messing around with AI in other ways, whether it's automation flows or implementing AI in my "vibe-coding" projects, 
-                I find that AI can offer great opportunities with a relatively low barrier of entry.
-                In addition to my projects, I'm also working on a blog where I share my thoughts and experiences with AI-assisted development and other related topics as a way to document and reflect on the things I learn throughout.
-            </p>
-        </section>
+    <p>The site is getting a fresh coat of paint. Check back soon — it'll be worth the wait.</p>
 
-        <section class="reveal">
-            <h1>Educational Background</h1>
+    <div class="scan-track">
+      <div class="scan-bar"></div>
+    </div>
 
-            <div class="edu-grid">
-                <article class="edu-card">
-                    <header>
-                        <h2>MSc. – IT, Communication & Organization</h2>
-                        <time>Aarhus BSS • 2024–2026 (Ongoing)</time>
-                    </header>
-                    <p>Currently pursuing a master’s degree focused on the intersection of technology, communication, and business processes. The program emphasizes how digital solutions can enhance workflows and user experiences, and has strengthened my skills in project management, problem-solving, and IT implementation.</p>
-                </article>
-
-                <article class="edu-card">
-                    <header>
-                        <h2>BA – International Business Communication (English)</h2>
-                        <time>Aarhus University • 2021–2024</time>
-                    </header>
-                    <p>Gained expertise in strategic and intercultural communication, with the ability to translate complex technical concepts into clear, actionable insights. Elective coursework in programming included data analysis, visualization, and introductory machine learning.</p>
-                </article>
-
-                <article class="edu-card">
-                    <header>
-                        <h2>Exchange Semester</h2>
-                        <div class="edu-meta">University of Vermont, USA • January–May 2023</div>
-                    </header>
-                    <p>Expanded my international perspective while studying leadership, business strategy, and organizational behavior. Strengthened adaptability, teamwork, and cross-cultural communication skills.</p>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer>   
-        <p>&copy; 2025 Jonas Davidsen. All rights reserved.</p>
-
-        <a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" target="_blank">
-              <i class="fa-brands fa-square-linkedin"></i>
-        </a>
-        
-        <a href="https://github.com/jonashjda" target="_blank">
-              <i class="fa-brands fa-github"></i>
-        </a>
-    </footer>
+    <p class="footer-note">© 2026</p>
+  </div>
 </body>
 </html>
