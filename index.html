@@ -1,107 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Jonas Davidsen</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="src/favicon32.png" type="image/png">
-    <link rel="canonical" href="https://jonasdavidsen.com/">
-    <meta name="description" content="Welcome to my site! Or if you're seeing this in a search engine, how good is my SEO? Anyways, here you can find some information about me, my projects, and my thoughts about AI and related topics.">
-    <meta property="og:title" content="Home - Jonas Davidsen">
-    <meta property="og:description" content="Welcome to my site! Or if you're seeing this in a search engine, how good is my SEO? Anyways, here you can find some information about me, my projects, and my thoughts about AI and related topics.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jonasdavidsen.com/">
-    <meta property="og:image" content="https://jonasdavidsen.com/src/prfile2.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://jonasdavidsen.com/src/prfile2.jpg">
-    <script src="scripts/menu-toggle.js" defer></script>
-    <script src="scripts/active-nav.js" defer></script>
-    <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonas Davidsen — AI Practitioner & Researcher</title>
+  <link rel="icon" href="src/favicon32.png" type="image/png" />
+  <link rel="canonical" href="https://jonasdavidsen.com/" />
+  <meta name="description" content="Jonas Davidsen — AI practitioner and researcher at the intersection of artificial intelligence, technology strategy, and organizational communication." />
+  <meta property="og:title" content="Jonas Davidsen — AI Practitioner & Researcher" />
+  <meta property="og:description" content="AI practitioner and researcher bridging technical depth with strategic clarity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jonasdavidsen.com/" />
+  <meta property="og:image" content="https://jonasdavidsen.com/src/prfile2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://jonasdavidsen.com/src/prfile2.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header class="navbar">
 
-        <a href="index.html" id="navbar-left-link">
-            <div class="navbar-left">
-                <img src="src/prfile2.jpg" alt="Jonas Davidsen" class="profile-img">
-                <span class="name">Jonas Davidsen</span>
+  <header class="jd-header" id="jd-header">
+    <div class="jd-container jd-header__inner">
+      <a href="#" class="jd-header__logo">JD</a>
+      <nav class="jd-header__nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="jd-hero" id="hero">
+      <div class="jd-container jd-hero__inner">
+
+        <div class="jd-hero__content">
+          <p class="jd-hero__label">AI Practitioner &amp; Expert</p>
+          <h1 class="jd-hero__name">Jonas<br>Davidsen</h1>
+          <p class="jd-hero__tagline">Technical depth meets strategic clarity.</p>
+          <div class="jd-hero__actions">
+            <a href="#connect" class="jd-btn jd-btn--primary">Connect</a>
+            <a href="#about" class="jd-btn jd-btn--ghost">About</a>
+          </div>
+        </div>
+
+        <div class="jd-hero__visual" aria-hidden="true">
+          <div class="jd-hero__frame">
+            <img src="src/prfile2.png" alt="" class="jd-hero__photo" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="jd-section" id="about">
+      <div class="jd-container">
+        <h2 class="jd-section__title jd-reveal">About</h2>
+        <div class="jd-about">
+          <div class="jd-about__lead jd-reveal">
+            <p>I work at the intersection of artificial intelligence, technology strategy, and organizational communication, building systems, analyzing outcomes, and translating complexity into clarity.</p>
+          </div>
+          <div class="jd-about__body">
+            <p class="jd-reveal">Pursuing an MSc in IT, Communication &amp; Organization at Aarhus BSS, I bring together formal academic training in machine learning and data analysis with applied experience designing and deploying AI-powered tools. My focus lies in understanding how AI systems integrate into organizations, shape communication, and inform decision-making at scale.</p>
+            <p class="jd-reveal">A BA in International Business Communication from Aarhus University established the analytical and strategic foundations I build on today. An exchange semester at the University of Vermont sharpened my perspective on how technology operates across different organizational and cultural contexts.</p>
+            <p class="jd-reveal">My approach is pragmatic and evidence-driven. I work with AI not as a novelty, but as a consequential tool that demands rigor, critical thinking, and precise communication.</p>
+          </div>
+        </div>
+        <div class="jd-credentials jd-reveal">
+          <div class="jd-credential">
+            <span class="jd-credential__title">MSc in IT, Communication &amp; Organization</span>
+            <span class="jd-credential__sub">Aarhus BSS, 2024-2026 &nbsp;&middot;&nbsp; <em>Ongoing</em></span>
+          </div>
+          <div class="jd-credential">
+            <span class="jd-credential__title">BA in International Business Communication</span>
+            <span class="jd-credential__sub">Aarhus University &nbsp;&middot;&nbsp; 2021-2024</span>
+          </div>
+          <div class="jd-credential">
+            <span class="jd-credential__title">Exchange Semester</span>
+            <span class="jd-credential__sub">University of Vermont, USA &nbsp;&middot;&nbsp; Spring 2023</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="jd-section jd-section--alt" id="expertise">
+      <div class="jd-container">
+        <h2 class="jd-section__title jd-reveal">Expertise</h2>
+        <div class="jd-expertise">
+
+          <div class="jd-exp-row jd-reveal">
+            <span class="jd-exp-row__num">01</span>
+            <div class="jd-exp-row__body">
+              <h3 class="jd-exp-row__title">Academic Foundations in AI</h3>
+              <p class="jd-exp-row__text">Graduate and undergraduate training spanning machine learning theory, data analysis, and algorithmic thinking. Currently deepening this through MSc-level research at Aarhus BSS, focusing on how AI-driven systems interact with organizational communication and IT strategy.</p>
             </div>
-        </a>
+          </div>
 
-        <nav class="navbar-right" id="navbar-links">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-
-        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-    </header>
-
-    <main class="blog-container">
-        <section class="reveal">
-            <h1>Exploring Ideas Through AI-Assisted Development</h1>
-            <p>
-                In my spare time, I like to “vibe-code”, which means using AI tools, curiosity, and a lot of experimentation to turn ideas into working projects.
-                At least, that's how ChatGPT would describe it. In simpler terms, it means using AI to code with.
-            </p>
-            <p>
-                Without a traditional computer science background, I’ve learned by building: starting with a concept, getting it running as quickly as possible, and refining it through trial, error, and iteration.
-                AI fills in the technical gaps, allowing me to quickly iterate and improve my ideas and their technical implementation.
-            </p>
-            <p>
-                My educational background in the intersection between IT, business, and communication shapes how I think about user experience and problem-solving, but my projects are ultimately about exploration.
-                Some are polished, others are rough around the edges, but each one taught me something new and gave me something real to share - and that’s what keeps me coming back to build the next one!
-            </p>
-            <p>
-                I also like messing around with AI in other ways, whether it's automation flows or implementing AI in my "vibe-coding" projects, 
-                I find that AI can offer great opportunities with a relatively low barrier of entry.
-                In addition to my projects, I'm also working on a blog where I share my thoughts and experiences with AI-assisted development and other related topics as a way to document and reflect on the things I learn throughout.
-            </p>
-        </section>
-
-        <section class="reveal">
-            <h1>Educational Background</h1>
-
-            <div class="edu-grid">
-                <article class="edu-card">
-                    <header>
-                        <h2>MSc. – IT, Communication & Organization</h2>
-                        <time>Aarhus BSS • 2024–2026 (Ongoing)</time>
-                    </header>
-                    <p>Currently pursuing a master’s degree focused on the intersection of technology, communication, and business processes. The program emphasizes how digital solutions can enhance workflows and user experiences, and has strengthened my skills in project management, problem-solving, and IT implementation.</p>
-                </article>
-
-                <article class="edu-card">
-                    <header>
-                        <h2>BA – International Business Communication (English)</h2>
-                        <time>Aarhus University • 2021–2024</time>
-                    </header>
-                    <p>Gained expertise in strategic and intercultural communication, with the ability to translate complex technical concepts into clear, actionable insights. Elective coursework in programming included data analysis, visualization, and introductory machine learning.</p>
-                </article>
-
-                <article class="edu-card">
-                    <header>
-                        <h2>Exchange Semester</h2>
-                        <div class="edu-meta">University of Vermont, USA • January–May 2023</div>
-                    </header>
-                    <p>Expanded my international perspective while studying leadership, business strategy, and organizational behavior. Strengthened adaptability, teamwork, and cross-cultural communication skills.</p>
-                </article>
+          <div class="jd-exp-row jd-reveal">
+            <span class="jd-exp-row__num">02</span>
+            <div class="jd-exp-row__body">
+              <h3 class="jd-exp-row__title">Applied AI Development</h3>
+              <p class="jd-exp-row__text">Hands-on experience designing and shipping AI-powered applications. Built a browser extension leveraging the OpenAI API to perform real-time political bias analysis on web content, end to end from architecture through deployment. Designs and maintains AI automation workflows connecting language models to practical business tasks.</p>
             </div>
-        </section>
-    </main>
+          </div>
 
-    <footer>   
-        <p>&copy; 2025 Jonas Davidsen. All rights reserved.</p>
+          <div class="jd-exp-row jd-reveal">
+            <span class="jd-exp-row__num">03</span>
+            <div class="jd-exp-row__body">
+              <h3 class="jd-exp-row__title">Strategy &amp; Communication</h3>
+              <p class="jd-exp-row__text">Formally trained in strategic and intercultural communication, with the ability to bridge technical AI capabilities and business outcomes. Synthesizes complex model behavior into frameworks accessible to decision-makers, grounded in the understanding that AI's value depends on how it is communicated and implemented.</p>
+            </div>
+          </div>
 
-        <a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" target="_blank">
-              <i class="fa-brands fa-square-linkedin"></i>
-        </a>
-        
-        <a href="https://github.com/jonashjda" target="_blank">
-              <i class="fa-brands fa-github"></i>
-        </a>
-    </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section class="jd-section" id="connect">
+      <div class="jd-container">
+        <h2 class="jd-section__title jd-reveal">Connect</h2>
+        <div class="jd-connect jd-reveal">
+          <p class="jd-connect__lead">Open to professional engagements, research collaboration, and substantive conversation about AI and its strategic implications.</p>
+          <div class="jd-connect__links">
+            <a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" class="jd-btn jd-btn--outline" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+              <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/jonashjda" class="jd-btn jd-btn--outline" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span>GitHub</span>
+              <i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="jd-footer">
+    <div class="jd-container jd-footer__inner">
+      <span class="jd-footer__copy">&copy; 2026 Jonas Davidsen</span>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('jd-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('jd-header--scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('jd-reveal--visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.jd-reveal').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
