@@ -165,16 +165,25 @@ body::after {
 
 /* ── Language switch ────────────────────────────────────────── */
 .jd-lang-switch {
-  font-family: var(--display);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
   flex-shrink: 0;
-  transition: color 0.2s;
+  font-family: var(--display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.jd-lang-switch:hover { color: var(--text); }
+.jd-lang-switch:hover {
+  color: var(--text);
+  border-color: var(--border-2);
+}
 
 /* ── Buttons ────────────────────────────────────────────────── */
 .jd-btn {
@@ -593,8 +602,7 @@ body::after {
 @media (max-width: 600px) {
   .jd-header__right { gap: 0.85rem; }
   .jd-header__nav { gap: 0.9rem; }
-  .jd-header__nav a,
-  .jd-lang-switch { font-size: 0.68rem; letter-spacing: 0.08em; }
+  .jd-header__nav a { font-size: 0.68rem; letter-spacing: 0.08em; }
   .jd-hero__actions { flex-direction: column; align-items: flex-start; }
   .jd-hero__actions .jd-btn--ghost { display: none; }
   .jd-connect__links { flex-direction: column; }
