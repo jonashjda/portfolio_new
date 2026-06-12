@@ -219,6 +219,22 @@
       try { localStorage.setItem('jd-theme', next); } catch (e) {}
     });
 
+    document.fonts.ready.then(() => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 32;
+      canvas.height = 32;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#09090B';
+      ctx.fillRect(0, 0, 32, 32);
+      ctx.fillStyle = '#FAFAFA';
+      ctx.font = '700 13px "Space Grotesk", system-ui, sans-serif';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('J', 4, 17);
+      ctx.fillText('D', 16, 17);
+      const link = document.querySelector("link[rel='icon'][type='image/svg+xml']");
+      if (link) link.href = canvas.toDataURL();
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
