@@ -3,17 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jonas Davidsen - AI Researcher & Practitioner</title>
+
+  <!-- Set theme before paint to avoid a flash of the wrong colors -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('jd-theme');
+        var theme = stored
+          || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <title>Jonas Davidsen - AI Practicioner & Enthutiast</title>
   <link rel="icon" href="src/favicon32.png" type="image/png" />
   <link rel="canonical" href="https://jonasdavidsen.com/" />
-  <meta name="description" content="Jonas Davidsen — AI researcher and practitioner. Researching how AI creates value, building systems that prove it." />
-  <meta property="og:title" content="Jonas Davidsen — AI Researcher & Practitioner" />
-  <meta property="og:description" content="AI researcher and practitioner. Researching how AI creates value, building systems that prove it." />
+  <meta name="description" content="Jonas Davidsen - AI practicioner and enthutiast. Understanding how AI creates value, building systems that prove it." />
+  <meta property="og:title" content="Jonas Davidsen - AI Practicioner & Enthutiast" />
+  <meta property="og:description" content="AI practicioner and enthutiast. Understanding how AI creates value, building systems that prove it." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jonasdavidsen.com/" />
   <meta property="og:image" content="https://jonasdavidsen.com/src/prfile2.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://jonasdavidsen.com/src/prfile2.png" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Jonas Davidsen" />
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jonas Davidsen",
+      "url": "https://jonasdavidsen.com",
+      "image": "https://jonasdavidsen.com/src/prfile2.png",
+      "jobTitle": "AI Practicioner & Enthusiast",
+      "description": "AI practicioner and enthutiast studying how organizations learn to adopt AI, and building systems that prove it.",
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "Aarhus BSS" },
+        { "@type": "EducationalOrganization", "name": "Aarhus University" },
+        { "@type": "EducationalOrganization", "name": "University of Vermont" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/jonas-davidsen-01a1b0219/",
+        "https://github.com/jonashjda"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Jonas Davidsen",
+      "url": "https://jonasdavidsen.com"
+    }
+  ]
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,11 +73,17 @@
   <header class="jd-header" id="jd-header">
     <div class="jd-container jd-header__inner">
       <a href="#" class="jd-header__logo">JD</a>
-      <nav class="jd-header__nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#work">What I do</a>
-        <a href="#connect">Connect</a>
-      </nav>
+      <div class="jd-header__right">
+        <nav class="jd-header__nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#work">What I do</a>
+          <a href="#connect">Connect</a>
+        </nav>
+        <button type="button" class="jd-theme-toggle" id="jd-theme-toggle" aria-label="Switch color theme">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -53,7 +105,7 @@
 
         <div class="jd-hero__visual" aria-hidden="true">
           <div class="jd-hero__frame">
-            <img src="src/prfile2.png" alt="" class="jd-hero__photo" />
+            <img src="src/prfile2.png" alt="Jonas Davidsen, AI practicioner and enthutiast" class="jd-hero__photo" />
           </div>
         </div>
 
@@ -132,7 +184,7 @@
       <div class="jd-container">
         <h2 class="jd-section__title jd-reveal">Connect</h2>
         <div class="jd-connect jd-reveal">
-          <p class="jd-connect__lead">I'm always up for conversations about AI - what's working, what isn't, and where it's all heading. If you're navigating it in your professional life, figuring out where to start or how to build real capability, or just want to exchange ideas, reach out below &darr; </p>
+          <p class="jd-connect__lead">I'm always up for conversations about AI - what's working, what isn't, and where it's all heading. If you're navigating it in your life, figuring out where to start or how to build real capability, or just want to exchange ideas, reach out below. </p>
           <div class="jd-connect__links">
             <a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" class="jd-btn jd-btn--outline" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
@@ -157,6 +209,14 @@
     window.addEventListener('scroll', () => {
       header.classList.toggle('jd-header--scrolled', window.scrollY > 40);
     }, { passive: true });
+
+    const themeToggle = document.getElementById('jd-theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('jd-theme', next); } catch (e) {}
+    });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {

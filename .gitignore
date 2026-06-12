@@ -1,12 +1,5 @@
-node_modules/
 .env
-dist/
 .netlify/
-blog/drafts/
-projects/drafts/
-blog/s/
-sitemap.xml
-robots.txt
 .agents
 skills-lock.json
 .claude

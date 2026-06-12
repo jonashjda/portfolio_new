@@ -1,14 +1,19 @@
 /* ── Tokens ──────────────────────────────────────────────────── */
 :root {
-  --bg:       #09090B;
-  --bg-alt:   #0D0D11;
-  --surface:  #141417;
-  --border:   #27272A;
-  --border-2: #3F3F46;
-  --text:     #FAFAFA;
-  --text-2:   #A1A1AA;
-  --text-3:   #52525B;
-  --accent:   #38BDF8;
+  --bg:         #09090B;
+  --bg-alt:     #0D0D11;
+  --surface:    #141417;
+  --border:     #27272A;
+  --border-2:   #3F3F46;
+  --text:       #FAFAFA;
+  --text-2:     #A1A1AA;
+  --text-3:     #52525B;
+  --accent:     #38BDF8;
+  --accent-hover: #7DD3FC;
+  --on-accent:  #09090B;
+  --header-bg:  rgba(9, 9, 11, 0.88);
+  --row-hover:  rgba(255, 255, 255, 0.02);
+  --grain:      0.02;
 
   --display: 'Space Grotesk', system-ui, sans-serif;
   --body:    'Sora', system-ui, sans-serif;
@@ -17,6 +22,33 @@
   --pad:  clamp(1.25rem, 5vw, 3rem);
   --sec:  clamp(4rem, 6vw, 6.5rem);
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Light theme — hero frame ───────────────────────────────── */
+:root[data-theme="light"] .jd-hero__frame {
+  border-color: var(--border-2);
+}
+:root[data-theme="light"] .jd-hero__frame::after {
+  border-color: var(--accent);
+  opacity: 0.35;
+}
+
+/* ── Light theme ────────────────────────────────────────────── */
+:root[data-theme="light"] {
+  --bg:         #FFFFFF;
+  --bg-alt:     #F4F4F5;
+  --surface:    #FAFAFA;
+  --border:     #E4E4E7;
+  --border-2:   #C9C9CF;
+  --text:       #18181B;
+  --text-2:     #52525B;
+  --text-3:     #9CA0A8;
+  --accent:     #0284C7;
+  --accent-hover: #0369A1;
+  --on-accent:  #FFFFFF;
+  --header-bg:  rgba(255, 255, 255, 0.85);
+  --row-hover:  rgba(0, 0, 0, 0.025);
+  --grain:      0.015;
 }
 
 /* ── Base ───────────────────────────────────────────────────── */
@@ -34,6 +66,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
 }
 
 img { display: block; max-width: 100%; }
@@ -45,7 +78,7 @@ body::after {
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.02;
+  opacity: var(--grain);
   pointer-events: none;
   z-index: 9000;
 }
@@ -68,7 +101,7 @@ body::after {
   transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .jd-header--scrolled {
-  background: rgba(9, 9, 11, 0.88);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom-color: var(--border);
@@ -87,6 +120,11 @@ body::after {
   transition: color 0.2s;
 }
 .jd-header__logo:hover { color: var(--accent); }
+.jd-header__right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 .jd-header__nav { display: flex; gap: 2.5rem; }
 .jd-header__nav a {
   font-family: var(--display);
@@ -98,6 +136,32 @@ body::after {
   transition: color 0.2s;
 }
 .jd-header__nav a:hover { color: var(--text); }
+
+/* ── Theme toggle ───────────────────────────────────────────── */
+.jd-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease),
+              background 0.2s var(--ease);
+}
+.jd-theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-2);
+}
+.jd-theme-toggle:active { transform: translateY(1px); }
+.jd-theme-toggle .fa-moon { display: none; }
+.jd-theme-toggle .fa-sun  { display: inline; }
+:root[data-theme="light"] .jd-theme-toggle .fa-sun  { display: none; }
+:root[data-theme="light"] .jd-theme-toggle .fa-moon { display: inline; }
 
 /* ── Buttons ────────────────────────────────────────────────── */
 .jd-btn {
@@ -119,12 +183,12 @@ body::after {
 
 .jd-btn--primary {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
   border: 1px solid var(--accent);
 }
 .jd-btn--primary:hover {
-  background: #7DD3FC;
-  border-color: #7DD3FC;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 .jd-btn--ghost {
@@ -233,6 +297,7 @@ body::after {
 .jd-section {
   padding-block: var(--sec);
   border-top: 1px solid var(--border);
+  transition: background-color 0.35s var(--ease), border-color 0.35s var(--ease);
 }
 .jd-section--alt { background: var(--bg-alt); }
 
@@ -323,7 +388,7 @@ body::after {
   transform-origin: bottom;
   transition: transform 0.22s var(--ease);
 }
-.jd-exp-row:hover { background: rgba(255, 255, 255, 0.02); }
+.jd-exp-row:hover { background: var(--row-hover); }
 .jd-exp-row:hover::before { transform: scaleY(1); }
 
 .jd-exp-row__num {
@@ -472,7 +537,8 @@ body::after {
   }
 }
 @media (max-width: 600px) {
-  .jd-header__nav { gap: 1.5rem; }
+  .jd-header__right { gap: 1rem; }
+  .jd-header__nav { gap: 1.1rem; }
   .jd-hero__actions { flex-direction: column; align-items: flex-start; }
   .jd-connect__links { flex-direction: column; }
   .jd-btn--outline { justify-content: space-between; }
