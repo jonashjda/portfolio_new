@@ -123,7 +123,7 @@ body::after {
 .jd-header__right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 .jd-header__nav { display: flex; gap: 2.5rem; }
 .jd-header__nav a {
@@ -162,6 +162,19 @@ body::after {
 .jd-theme-toggle .fa-sun  { display: inline; }
 :root[data-theme="light"] .jd-theme-toggle .fa-sun  { display: none; }
 :root[data-theme="light"] .jd-theme-toggle .fa-moon { display: inline; }
+
+/* ── Language switch ────────────────────────────────────────── */
+.jd-lang-switch {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.jd-lang-switch:hover { color: var(--text); }
 
 /* ── Buttons ────────────────────────────────────────────────── */
 .jd-btn {
@@ -578,8 +591,10 @@ body::after {
   }
 }
 @media (max-width: 600px) {
-  .jd-header__right { gap: 1rem; }
-  .jd-header__nav { gap: 1.1rem; }
+  .jd-header__right { gap: 0.85rem; }
+  .jd-header__nav { gap: 0.9rem; }
+  .jd-header__nav a,
+  .jd-lang-switch { font-size: 0.68rem; letter-spacing: 0.08em; }
   .jd-hero__actions { flex-direction: column; align-items: flex-start; }
   .jd-hero__actions .jd-btn--ghost { display: none; }
   .jd-connect__links { flex-direction: column; }

@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jonasdavidsen.com/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonasdavidsen.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://jonasdavidsen.com/da/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jonasdavidsen.com/" />
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jonasdavidsen.com/da/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jonasdavidsen.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://jonasdavidsen.com/da/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jonasdavidsen.com/" />
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

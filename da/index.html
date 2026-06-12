@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Send first-time Danish-language visitors to /da/ (manual switch always overrides) -->
+  <!-- Respect an explicit English preference (manual switch always overrides) -->
   <script>
     (function () {
       try {
-        var saved = localStorage.getItem('jd-lang');
-        if (saved === 'da') { location.replace('/da/'); return; }
-        if (!saved && (navigator.language || '').toLowerCase().indexOf('da') === 0) {
-          location.replace('/da/'); return;
-        }
+        if (localStorage.getItem('jd-lang') === 'en') { location.replace('/'); return; }
       } catch (e) {}
     })();
   </script>
@@ -31,20 +27,20 @@
     })();
   </script>
 
-  <title>Jonas Davidsen - AI Practitioner & Enthusiast</title>
+  <title>Jonas Davidsen - AI-praktiker & entusiast</title>
   <link rel="icon" href="/src/favicon.svg" type="image/svg+xml" />
-  <link rel="canonical" href="https://jonasdavidsen.com/" />
+  <link rel="canonical" href="https://jonasdavidsen.com/da/" />
   <link rel="alternate" hreflang="en" href="https://jonasdavidsen.com/" />
   <link rel="alternate" hreflang="da" href="https://jonasdavidsen.com/da/" />
   <link rel="alternate" hreflang="x-default" href="https://jonasdavidsen.com/" />
-  <meta name="description" content="Jonas Davidsen - AI practitioner and enthusiast. Understanding how AI creates value, building systems that prove it." />
-  <meta property="og:title" content="Jonas Davidsen - AI Practitioner & Enthusiast" />
-  <meta property="og:description" content="AI practitioner and enthusiast. Understanding how AI creates value, building systems that prove it." />
+  <meta name="description" content="Jonas Davidsen - AI-praktiker og entusiast. Forstår hvordan AI skaber værdi og bygger systemer, der beviser det." />
+  <meta property="og:title" content="Jonas Davidsen - AI-praktiker & entusiast" />
+  <meta property="og:description" content="AI-praktiker og entusiast. Forstår hvordan AI skaber værdi og bygger systemer, der beviser det." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jonasdavidsen.com/" />
+  <meta property="og:url" content="https://jonasdavidsen.com/da/" />
   <meta property="og:image" content="https://jonasdavidsen.com/src/prfile2.png" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:locale:alternate" content="da_DK" />
+  <meta property="og:locale" content="da_DK" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://jonasdavidsen.com/src/prfile2.png" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -58,11 +54,11 @@
       "name": "Jonas Davidsen",
       "url": "https://jonasdavidsen.com",
       "image": "https://jonasdavidsen.com/src/prfile2.png",
-      "jobTitle": "AI Practitioner & Enthusiast",
-      "description": "AI practitioner and enthusiast studying how organizations learn to adopt AI, and building systems that prove it.",
+      "jobTitle": "AI-praktiker & entusiast",
+      "description": "AI-praktiker og entusiast, der studerer hvordan organisationer lærer at adoptere AI, og bygger systemer, der beviser det.",
       "alumniOf": [
         { "@type": "EducationalOrganization", "name": "Aarhus BSS" },
-        { "@type": "EducationalOrganization", "name": "Aarhus University" },
+        { "@type": "EducationalOrganization", "name": "Aarhus Universitet" },
         { "@type": "EducationalOrganization", "name": "University of Vermont" }
       ],
       "sameAs": [
@@ -75,7 +71,7 @@
       "@type": "WebSite",
       "name": "Jonas Davidsen",
       "url": "https://jonasdavidsen.com",
-      "inLanguage": "en"
+      "inLanguage": "da"
     }
   ]
   </script>
@@ -93,13 +89,13 @@
     <div class="jd-container jd-header__inner">
       <a href="#" class="jd-header__logo">JD</a>
       <div class="jd-header__right">
-        <nav class="jd-header__nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#work">What I do</a>
-          <a href="#connect">Connect</a>
+        <nav class="jd-header__nav" aria-label="Primær">
+          <a href="#about">Om mig</a>
+          <a href="#work">Hvad jeg laver</a>
+          <a href="#connect">Kontakt</a>
         </nav>
-        <a href="/da/" class="jd-lang-switch" onclick="try{localStorage.setItem('jd-lang','da')}catch(e){}" aria-label="Skift til dansk">DA</a>
-        <button type="button" class="jd-theme-toggle" id="jd-theme-toggle" aria-label="Switch color theme">
+        <a href="/" class="jd-lang-switch" onclick="try{localStorage.setItem('jd-lang','en')}catch(e){}" aria-label="Switch to English">EN</a>
+        <button type="button" class="jd-theme-toggle" id="jd-theme-toggle" aria-label="Skift farvetema">
           <i class="fa-solid fa-sun" aria-hidden="true"></i>
           <i class="fa-solid fa-moon" aria-hidden="true"></i>
         </button>
@@ -114,23 +110,23 @@
       <div class="jd-container jd-hero__inner">
 
         <div class="jd-hero__content">
-          <p class="jd-hero__label">AI Practitioner &amp; Enthusiast</p>
+          <p class="jd-hero__label">AI-praktiker &amp; entusiast</p>
           <div class="jd-hero__name-row">
             <h1 class="jd-hero__name">Jonas<br>Davidsen</h1>
-            <p class="jd-hero__tagline">Understanding how AI creates value. Building systems that prove it.</p>
+            <p class="jd-hero__tagline">Forstår hvordan AI skaber værdi. Bygger systemer, der beviser det.</p>
             <div class="jd-hero__avatar" aria-hidden="true">
               <img src="/src/prfile2.png" alt="" class="jd-hero__avatar-img" />
             </div>
           </div>
           <div class="jd-hero__actions">
-            <a href="#connect" class="jd-btn jd-btn--primary">Connect</a>
-            <a href="#about" class="jd-btn jd-btn--ghost">About</a>
+            <a href="#connect" class="jd-btn jd-btn--primary">Kontakt</a>
+            <a href="#about" class="jd-btn jd-btn--ghost">Om mig</a>
           </div>
         </div>
 
         <div class="jd-hero__visual" aria-hidden="true">
           <div class="jd-hero__frame">
-            <img src="/src/prfile2.png" alt="Jonas Davidsen, AI practitioner and enthusiast" class="jd-hero__photo" />
+            <img src="/src/prfile2.png" alt="Jonas Davidsen, AI-praktiker og entusiast" class="jd-hero__photo" />
           </div>
         </div>
 
@@ -140,31 +136,31 @@
     <!-- ABOUT -->
     <section class="jd-section" id="about">
       <div class="jd-container">
-        <h2 class="jd-section__title jd-reveal">About</h2>
+        <h2 class="jd-section__title jd-reveal">Om mig</h2>
         <div class="jd-about">
           <div class="jd-about__lead jd-reveal">
-            <p>I both work with AI and have studied how organizations adopt them. This combination gives me a solid foundation of understanding both the technology and the real world in which it is used.</p>
+            <p>Jeg arbejder med AI og har studeret, hvordan organisationer tager teknologien i brug. Den kombination giver mig et solidt fundament for at forstå både teknologien og den virkelighed, den bruges i.</p>
           </div>
           <div class="jd-about__body">
-            <p class="jd-reveal">I have designed and shipped AI tools in real business environments: automated classification pipelines, conversational AI systems, and automation workflows that connect language models to real business tasks. I've taken projects from ideation through deployment, working with tools such as Python, JavaScript, and n8n. Outside of professional work I build for myself, including a browser extension using the OpenAI API for real-time political bias analysis on web content as well as other personal applications and automations.</p>
+            <p class="jd-reveal">Jeg har designet og leveret AI-værktøjer i virkelige forretningsmiljøer: automatiserede klassifikationspipelines, samtalebaserede AI-systemer og automatiseringsworkflows, der forbinder sprogmodeller med konkrete forretningsopgaver. Jeg har taget projekter fra idé til implementering med værktøjer som Python, JavaScript og n8n. Uden for arbejdet bygger jeg også til mig selv, blandt andet en browserudvidelse, der bruger OpenAI's API til at analysere politisk bias på websider i realtid, samt andre personlige applikationer og automatiseringer.</p>
 
-            <p class="jd-reveal">My MSc thesis at Aarhus BSS was a qualitative case study examining how generative AI exploration contributes to organizational learning in an SME. The research question: what does a company learn about its own conditions and limitations for AI adoption through hands-on use? I drew on organizational learning theory and IT strategy to answer it. The question wasn't "does AI create value," but under what conditions, for whom, and how you get there.</p>
+            <p class="jd-reveal">Mit speciale på Aarhus BSS var et kvalitativt casestudie af, hvordan udforskning af generativ AI bidrager til organisatorisk læring i en SMV. Forskningsspørgsmålet: hvad lærer en virksomhed om sine egne forudsætninger og begrænsninger for AI-adoption gennem praktisk brug? Jeg trak på teori om organisatorisk læring og IT-strategi for at besvare det. Spørgsmålet var ikke "skaber AI værdi", men under hvilke betingelser, for hvem, og hvordan man når dertil.</p>
 
-            <p class="jd-reveal">A BA in International Business Communication from Aarhus University, including an exchange semester at the University of Vermont in the USA, built my foundation in strategy, intercultural communication, and how technology travels across different organizational and cultural contexts.</p>
+            <p class="jd-reveal">En BA i international virksomhedskommunikation fra Aarhus Universitet, inklusive et udvekslingssemester på University of Vermont i USA, byggede mit fundament inden for strategi, interkulturel kommunikation og hvordan teknologi bevæger sig på tværs af organisatoriske og kulturelle sammenhænge.</p>
           </div>
         </div>
         <div class="jd-credentials jd-reveal">
           <div class="jd-credential">
-            <span class="jd-credential__title">MSc in IT, Communication &amp; Organization</span>
-            <span class="jd-credential__sub">Aarhus BSS &nbsp;&middot;&nbsp; 2024&ndash;2026 &nbsp;&middot;&nbsp; <em>Ongoing</em> &nbsp;&middot;&nbsp; Thesis: GenAI adoption and organizational learning in SMEs</span>
+            <span class="jd-credential__title">Cand.soc. i IT, Kommunikation og Organisation</span>
+            <span class="jd-credential__sub">Aarhus BSS &nbsp;&middot;&nbsp; 2024&ndash;2026 &nbsp;&middot;&nbsp; <em>Igangværende</em> &nbsp;&middot;&nbsp; Speciale: GenAI-adoption og organisatorisk læring i SMV'er</span>
           </div>
           <div class="jd-credential">
-            <span class="jd-credential__title">BA in International Business Communication</span>
-            <span class="jd-credential__sub">Aarhus University &nbsp;&middot;&nbsp; 2021-2024</span>
+            <span class="jd-credential__title">BA i International Virksomhedskommunikation</span>
+            <span class="jd-credential__sub">Aarhus Universitet &nbsp;&middot;&nbsp; 2021&ndash;2024</span>
           </div>
           <div class="jd-credential">
-            <span class="jd-credential__title">Exchange Semester</span>
-            <span class="jd-credential__sub">University of Vermont, USA &nbsp;&middot;&nbsp; Spring 2023</span>
+            <span class="jd-credential__title">Udvekslingssemester</span>
+            <span class="jd-credential__sub">University of Vermont, USA &nbsp;&middot;&nbsp; Forår 2023</span>
           </div>
         </div>
       </div>
@@ -173,30 +169,30 @@
     <!-- WORK -->
     <section class="jd-section jd-section--alt" id="work">
       <div class="jd-container">
-        <h2 class="jd-section__title jd-reveal">What I do</h2>
+        <h2 class="jd-section__title jd-reveal">Hvad jeg laver</h2>
         <div class="jd-expertise">
 
           <div class="jd-exp-row jd-reveal">
             <span class="jd-exp-row__num">01</span>
             <div class="jd-exp-row__body">
-              <h3 class="jd-exp-row__title">Building</h3>
-              <p class="jd-exp-row__text">I design and ship AI systems in production: classification pipelines, conversational tools, and automation workflows that connect language models to real business tasks. I work across Python, JavaScript, and n8n, and I take projects from the problem and ideation phases through deployment. The measure is always whether it works in practice, not just in theory.</p>
+              <h3 class="jd-exp-row__title">Bygger</h3>
+              <p class="jd-exp-row__text">Jeg designer og leverer AI-systemer i produktion: klassifikationspipelines, samtaleværktøjer og automatiseringsworkflows, der forbinder sprogmodeller med konkrete forretningsopgaver. Jeg arbejder på tværs af Python, JavaScript og n8n og tager projekter fra problem og idé til implementering. Målestokken er altid, om det virker i praksis, ikke kun i teorien.</p>
             </div>
           </div>
 
           <div class="jd-exp-row jd-reveal">
             <span class="jd-exp-row__num">02</span>
             <div class="jd-exp-row__body">
-              <h3 class="jd-exp-row__title">Understanding</h3>
-              <p class="jd-exp-row__text">Through my MSc research and an extensive literature review of AI value creation, I've developed a grounded view of how AI actually gets adopted — where it delivers, where it stalls, and what holds people and organizations back. The limiting factor is rarely the technology. It's knowing where to start and what to do with it.</p>
+              <h3 class="jd-exp-row__title">Forstår</h3>
+              <p class="jd-exp-row__text">Gennem min specialeforskning og en omfattende litteraturgennemgang af AI-værdiskabelse har jeg fået et solidt indblik i, hvordan AI faktisk bliver taget i brug, hvor det leverer, hvor det går i stå, og hvad der holder mennesker og organisationer tilbage. Den begrænsende faktor er sjældent teknologien. Det er at vide, hvor man skal starte, og hvad man skal bruge den til.</p>
             </div>
           </div>
 
           <div class="jd-exp-row jd-reveal">
             <span class="jd-exp-row__num">03</span>
             <div class="jd-exp-row__body">
-              <h3 class="jd-exp-row__title">Translating</h3>
-              <p class="jd-exp-row__text">Most people working with AI today aren't engineers. They're professionals trying to figure out how to make it useful in their day-to-day work. I bridge that gap by turning technical capability into practical understanding, and making AI accessible to the people who actually need to use it.</p>
+              <h3 class="jd-exp-row__title">Oversætter</h3>
+              <p class="jd-exp-row__text">De fleste, der arbejder med AI i dag, er ikke ingeniører. De er fagfolk, der forsøger at finde ud af, hvordan de gør teknologien nyttig i deres hverdag. Jeg bygger bro ved at omsætte teknisk kunnen til praktisk forståelse og gøre AI tilgængelig for de mennesker, der faktisk skal bruge den.</p>
             </div>
           </div>
 
@@ -207,9 +203,9 @@
     <!-- CONNECT -->
     <section class="jd-section" id="connect">
       <div class="jd-container">
-        <h2 class="jd-section__title jd-reveal">Connect</h2>
+        <h2 class="jd-section__title jd-reveal">Kontakt</h2>
         <div class="jd-connect jd-reveal">
-          <p class="jd-connect__lead">I'm always up for conversations about AI - what's working, what isn't, and where it's all heading. If you're navigating it in your life, figuring out where to start or how to build real capability, or just want to exchange ideas, reach out below. </p>
+          <p class="jd-connect__lead">Jeg er altid frisk på en snak om AI, hvad der virker, hvad der ikke gør, og hvor det hele er på vej hen. Hvis du selv står midt i det, er ved at finde ud af, hvor du skal starte, eller hvordan du opbygger reel kompetence, eller bare vil udveksle idéer, så skriv til mig nedenfor. </p>
           <div class="jd-connect__links">
             <a href="https://www.linkedin.com/in/jonas-davidsen-01a1b0219/" class="jd-btn jd-btn--outline" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
