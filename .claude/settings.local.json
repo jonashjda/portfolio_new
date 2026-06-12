@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(Get-ChildItem -Path \"C:\\\\Random_Projects\\\\portfolio_new\" -Force)",
-      "Bash(Format-Table -AutoSize)"
-    ]
-  }
-}
