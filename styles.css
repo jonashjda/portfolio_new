@@ -425,6 +425,7 @@ body::after {
   letter-spacing: 0.12em;
   color: var(--text-3);
   padding-top: 0.22rem;
+  margin-left: 0.3rem;
   transition: color 0.22s;
 }
 .jd-exp-row:hover .jd-exp-row__num { color: var(--accent); }
